@@ -10,7 +10,8 @@ import javax.persistence.Id;
 import java.util.Objects;
 @Entity
 public abstract class Employe {
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	private String nom;
