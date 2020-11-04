@@ -10,5 +10,5 @@ public interface EmployeRepository extends CrudRepository<Employe,Long> {
 
     List<Employe> findByNomAndPrenom(String nom, String prenom);
 
-
+    List<Employe> findByNomIgnoreCase(String nom);
 }

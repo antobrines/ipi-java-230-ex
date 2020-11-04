@@ -20,14 +20,15 @@ public class MyRunner implements CommandLineRunner {
     public void run(String... strings) throws Exception {
         System.out.println("Bonjour");
         Optional<Employe> employe = Optional.ofNullable(employeRepository.findByMatricule("M11109"));
-        List<Employe> npE = employeRepository.findByNomAndPrenom("Andre", "Alexandre");
-        npE.forEach(System.out::println);
         if (employe.isPresent()){
             System.out.println("Voici le nom de l'employé avec le matricule M11109 : " +  employe.get().getNom());
         } else {
             System.out.println("Aucun employé dispose de ce matricule");
         }
-
+        List<Employe> npE = employeRepository.findByNomAndPrenom("Andre", "Alexandre");
+        npE.forEach(System.out::println);
+        List<Employe> nEIc = employeRepository.findByNomIgnoreCase("andre");
+        nEIc.forEach(System.out::println);
     }
 
     public static void print(Object t) {
