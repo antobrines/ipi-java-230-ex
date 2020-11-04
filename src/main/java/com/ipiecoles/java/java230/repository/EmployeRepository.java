@@ -15,4 +15,6 @@ public interface EmployeRepository extends CrudRepository<Employe,Long> {
     List<Employe> findByNomIgnoreCase(String nom);
 
     List<Employe> findByDateEmbaucheBefore(LocalDate date);
+
+    List<Employe> findByDateEmbaucheAfter(LocalDate date);
 }
